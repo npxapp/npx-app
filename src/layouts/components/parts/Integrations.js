@@ -105,7 +105,7 @@ const Integrations = ({ expanded, handleAccordionChange }) => {
         />
         <ListItemText 
           primary="Digital Downloads" 
-          onClick={() => navigateOpen('/download')}
+          onClick={() => navigateOpen('/downloads')}
           sx={{
             cursor: 'pointer',
             padding: '0',
