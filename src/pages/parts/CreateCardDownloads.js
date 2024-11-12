@@ -5,6 +5,7 @@ import { useDarkMode } from '../../contexts/DarkMode';
 const CardStyles = (darkMode) => ({
   position: 'relative',
   overflow: 'hidden',
+  flexGrow: 1,
 });
 
 const CardHeaderStyles = (darkMode) => ({
