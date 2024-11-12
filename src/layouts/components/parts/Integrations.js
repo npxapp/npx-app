@@ -103,12 +103,27 @@ const Integrations = ({ expanded, handleAccordionChange }) => {
             },
           }}
         />
+        <ListItemText 
+          primary="Digital Downloads" 
+          onClick={() => navigateOpen('/download')}
+          sx={{
+            cursor: 'pointer',
+            padding: '0',
+            margin: '0',
+            '& .MuiTypography-root': {
+              color: darkMode ? '#007fff' : '#000000',
+              padding: '0',
+              margin: '0',
+            },
+          }}
+        />
       </AccordionDetails>
     </Accordion>
   );
 };
 
 export default Integrations;
+
 
 
 

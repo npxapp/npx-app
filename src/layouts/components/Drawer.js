@@ -36,14 +36,17 @@ const Drawer = ({ open, toggleDrawer }) => {
       open={open} 
       onClose={() => toggleDrawer(false)}
     >
-      {/* Getting Started Section */}
       <GettingStarted 
         expanded={expanded} 
         handleAccordionChange={handleAccordionChange} 
       />
   
-      {/* ProApp Demo Section */}
       <Demo 
+        expanded={expanded} 
+        handleAccordionChange={handleAccordionChange} 
+      />
+  
+      <Integrations
         expanded={expanded} 
         handleAccordionChange={handleAccordionChange} 
       />
