@@ -76,8 +76,8 @@ const Integrations = ({ expanded, handleAccordionChange }) => {
         }}
       >        
         <ListItemText 
-          primary="Routing libraries" 
-          onClick={() => navigateOpen('/')}
+          primary="Payment Success" 
+          onClick={() => navigateOpen('/paid')}
           sx={{
             cursor: 'pointer',
             padding: '0',
@@ -90,22 +90,8 @@ const Integrations = ({ expanded, handleAccordionChange }) => {
           }}
         />
         <ListItemText 
-          primary="Usage with webhooks" 
-          onClick={() => navigateOpen('/')}
-          sx={{
-            cursor: 'pointer',
-            padding: '0',
-            margin: '0',
-            '& .MuiTypography-root': {
-              color: darkMode ? '#007fff' : '#000000',
-              padding: '0',
-              margin: '0',
-            },
-          }}
-        />
-        <ListItemText 
-          primary="Digital Downloads" 
-          onClick={() => navigateOpen('/downloads')}
+          primary="Digital Download" 
+          onClick={() => navigateOpen('/download')}
           sx={{
             cursor: 'pointer',
             padding: '0',
