@@ -122,6 +122,7 @@ const Dashboard = () => {
                     color: '#61dafb',
                     borderRadius: 20,
                     border: '1px solid #61dafb',
+                    backgroundColor: selectedFilter === status.split(' ')[0].toLowerCase() ? 'rgba(97, 218, 251, .2)' : 'transparent',
                     textTransform: 'none',
                   }}
                 >
