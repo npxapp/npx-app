@@ -17,32 +17,34 @@ const SlidePayments = () => {
     handleViewRestore,
   } = usePayment();
   
-  // Track exit direction
-  const [exitDirection, setExitDirection] = useState(null);
+  // Track both enter and exit directions
+  const [slideDirection, setSlideDirection] = useState('right');
+  const [isExiting, setIsExiting] = useState(false);
   
-  // Reset exit direction when slide becomes active
+  // Update direction based on slide changes
   useEffect(() => {
     if (activeSlide === 0) {
-      setExitDirection(null);
+      // When returning to main slide, set direction based on where we came from
+      setSlideDirection(previousSlide === 2 ? 'left' : 'right');
+      setIsExiting(false);
     }
-  }, [activeSlide]);
+  }, [activeSlide, previousSlide]);
 
-  // Modified handlers to set exit direction
+  // Modified handlers to set proper directions
   const handleViewRestoreWithDirection = () => {
-    setExitDirection('right');
+    setSlideDirection('right');
+    setIsExiting(true);
     handleViewRestore();
   };
 
   const handleViewDetailsWithDirection = (payment) => {
-    setExitDirection('left');
+    setSlideDirection('left');
+    setIsExiting(true);
     handleViewDetails(payment);
   };
   
-  // Determine slide direction based on whether we're entering or exiting
-  const slideDirection = exitDirection || (previousSlide === 2 ? "left" : "right");
-
   return (
-    <Slide direction={slideDirection} in={activeSlide === 0} mountOnEnter unmountOnExit>
+    <Slide direction={slideDirection} in={activeSlide === 0} mountOnEnter unmountOnExit onExit={() => setIsExiting(true)} onEnter={() => setIsExiting(false)} >
       <Box
         sx={{
           display: 'flex',
